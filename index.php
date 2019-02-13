@@ -1,13 +1,3 @@
 <?php
-const TESTCONSTANTA = 'asd';
-$user_name = "Igor";
-
-function show_something()
-{
-    return 'SOMETHING';
-}
-
-if (1==1) {
-    echo 'hi';
-}
-
+echo "<p style=\"font-size: 20px; font-weight: 700;\">Задание 1:</p>";
+require "./zad1.php";
