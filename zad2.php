@@ -9,5 +9,5 @@
 const TOTAL_PICTURES = 80;
 const FELT_PEN_PICTURES = 23;
 const PENCIL_PICTURES = 40;
-$paints_pictures = TOTAL_PICTURES - FELT_PEN_PICTURES - PENCIL_PICTURES;
-echo "На школьной выставке красками было выполнено $paints_pictures рисунков";
+$paintsPictures = TOTAL_PICTURES - FELT_PEN_PICTURES - PENCIL_PICTURES;
+echo "На школьной выставке красками было выполнено $paintsPictures рисунков";

@@ -33,8 +33,8 @@ $cars["toyota"] = $toyota;
 $cars["opel"] = $opel;
 foreach ($cars as $key => $value) {
     echo "CAR $key<br/>"
-        .$cars[$key]["model"]." "
-        .$cars[$key]["speed"]." "
-        .$cars[$key]["doors"]." "
-        .$cars[$key]["year"]."<br/>";
+        .$value["model"]." "
+        .$value["speed"]." "
+        .$value["doors"]." "
+        .$value["year"]."<br/>";
 }
