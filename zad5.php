@@ -32,9 +32,5 @@ $cars["bmw"] = $bmw;
 $cars["toyota"] = $toyota;
 $cars["opel"] = $opel;
 foreach ($cars as $key => $value) {
-    echo "CAR $key<br/>"
-        .$value["model"]." "
-        .$value["speed"]." "
-        .$value["doors"]." "
-        .$value["year"]."<br/>";
+    echo "CAR $key<br/>".implode(" ", $value)."<br/>";
 }
