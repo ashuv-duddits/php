@@ -120,3 +120,49 @@ function task3($cols, $rows)
 1. Выведите информацию о текущей дате в формате 31.12.2016 23:59
 2. Выведите unixtime время соответствующее 24.02.2016 00:00:00.
 */
+function task4($dateString)
+{
+    echo date("d.m.Y H:i");
+    echo "<br>";
+    $date = explode(" ", $dateString)[0];
+    $time = explode(" ", $dateString)[1];
+    $day = explode(".", $date)[0];
+    $month = explode(".", $date)[1];
+    $year = explode(".", $date)[2];
+    $dateStringConvert = "$year-$month-$day $time";
+    $timestamp = strtotime($dateStringConvert);
+    echo $timestamp;
+}
+/*
+Задание #5 выполняется после вебинара “ВСТРОЕННЫЕ ВОЗМОЖНОСТИ ЯЗЫКА”)
+1. Дана строка: “Карл у Клары украл Кораллы”. удалить из этой строки все заглавные
+буквы “К”.
+2. Дана строка “Две бутылки лимонада”. Заменить “Две”, на “Три”. По желанию
+дополнить задание.
+*/
+function task5($string, $del, $add)
+{
+    $array = explode($del, $string);
+    return implode($add, $array);
+}
+/*
+Задание #6 (выполняется после вебинара “ВСТРОЕННЫЕ ВОЗМОЖНОСТИ ЯЗЫКА”)
+1. Создайте файл test.txt средствами PHP. Поместите в него текст - “Hello again!”
+2. Напишите функцию, которая будет принимать имя файла, открывать файл и
+выводить содержимое на экран.
+*/
+function task6($fName, $text)
+{
+    $file = fopen($fName, 'w+');
+    $test = fwrite($file, $text);
+    if ($test) {
+        echo 'Данные в файл успешно занесены.';
+    } else {
+        echo 'Ошибка при записи в файл.';
+    }
+    fclose($file);
+    $file = fopen($fName, "r");
+    $myText = fgets($file, 999);
+    echo "<br>Содержимое файла: $myText";
+    fclose($file);
+}
