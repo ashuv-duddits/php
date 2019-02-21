@@ -123,14 +123,8 @@ function task3($cols, $rows)
 function task4($dateString)
 {
     echo date("d.m.Y H:i");
-    echo "<br>";
-    $date = explode(" ", $dateString)[0];
-    $time = explode(" ", $dateString)[1];
-    $day = explode(".", $date)[0];
-    $month = explode(".", $date)[1];
-    $year = explode(".", $date)[2];
-    $dateStringConvert = "$year-$month-$day $time";
-    $timestamp = strtotime($dateStringConvert);
+    $timestamp = strtotime($dateString);
+    echo "<br />";
     echo $timestamp;
 }
 /*
@@ -142,8 +136,7 @@ function task4($dateString)
 */
 function task5($string, $del, $add)
 {
-    $array = explode($del, $string);
-    return implode($add, $array);
+    return str_replace($del, $add, $string);
 }
 /*
 Задание #6 (выполняется после вебинара “ВСТРОЕННЫЕ ВОЗМОЖНОСТИ ЯЗЫКА”)
@@ -153,14 +146,12 @@ function task5($string, $del, $add)
 */
 function task6($fName, $text)
 {
-    $file = fopen($fName, 'w+');
-    $test = fwrite($file, $text);
+    $test = file_put_contents($fName, $text);
     if ($test) {
         echo 'Данные в файл успешно занесены.';
     } else {
         echo 'Ошибка при записи в файл.';
     }
-    fclose($file);
     $file = fopen($fName, "r");
     $myText = fgets($file, 999);
     echo "<br>Содержимое файла: $myText";
